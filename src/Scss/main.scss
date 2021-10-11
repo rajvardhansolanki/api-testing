@@ -1,0 +1,294 @@
+// import subfiles start hear
+
+@import './variable';
+@import './navbar';
+@import './classes.scss';
+
+// import subfiles end here
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+html {
+  scroll-behavior: smooth;
+}
+.loder{
+    width: 100%;
+    height: 60vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.btn_view {
+    display: block;
+    width: 129px;
+    height: 33px;
+    line-height: 29px;
+    font-size: 17px;
+    font-family: sans-serif;
+    text-decoration: none;
+    color: #333;
+    border: 1px solid #333;
+    letter-spacing: 2px;
+    text-align: center;
+    position: relative;
+    transition: all .35s;
+}
+  
+  .btn_view span{
+    position: relative;
+    z-index: 1;
+  }
+  
+  .btn_view:after{
+    position: absolute;
+    content: "";
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    background-image: linear-gradient(260deg, #2376ae 0%, #c16ecf 100%);
+    transition: all .35s;
+  }
+  
+  .btn_view:hover{
+    color: #fff;
+  }
+  
+  .btn_view:hover:after{
+    width: 100%;
+  }
+#btn-top{
+  position: fixed;
+  padding: 13px;
+  background-color: black;
+  outline: none;
+  border: none;
+  border-radius: 4px;
+  color: white;
+  right: 0;
+  bottom: 0;
+  margin: 10px;
+}
+#btn-top:hover{
+  background-color: white;
+  color: black;
+  border: 0.5px solid black;
+}
+  
+
+.slider-one,
+.slider-two,
+.slider-three,
+.slider-four {
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  position: absolute;
+  top: 0;
+  left: 0;
+  animation: slider-one 12s linear infinite;
+
+  .slider-one-image,
+  .slider-two-image,
+  .slider-three-image,
+  .slider-four-image {
+    width: 110%;
+    height: 100%;
+    background-image: url("https://i.ytimg.com/vi/8w4qPUSG17Y/maxresdefault.jpg");
+
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    animation: zoom-out 3s linear infinite;
+
+    .slider-text {
+      position: absolute;
+      top: 40%;
+      left: 5%;
+      color: #ffffff;
+      width: 600px;
+      text-transform: capitalize;
+      animation: text-up 12s linear infinite;
+      transform: translateY(100px);
+      animation-delay: 0s;
+
+      h1 {
+        font-size: 2.5rem;
+        margin-bottom: 20px;
+      }
+
+      p {
+        font-size: 18px;
+        line-height: 28px;
+      }
+    }
+  }
+}
+
+.slider-two {
+  animation: slider-two 12s linear infinite;
+
+  .slider-two-image {
+    background-image: url("https://cdn.arstechnica.net/wp-content/uploads/2021/04/apple-keynote-iphone.jpg");
+
+    .slider-text {
+      animation-delay: 3s;
+    }
+  }
+}
+
+.slider-three {
+  animation: slider-three 12s linear infinite;
+
+  .slider-three-image {
+    background-image: url("https://images.macrumors.com/t/SrG7Mc8gDi02Z1BUzIz2y16dBlc=/1600x0/article-new/2021/07/iphone-12-ad-in-the-dark.jpg");
+
+    .slider-text {
+      animation-delay: 6s;
+    }
+  }
+}
+
+.slider-four {
+  animation: slider-four 12s linear infinite;
+
+  .slider-four-image {
+    background-image: url("https://photos5.appleinsider.com/gallery/38465-73111-Apple-Movies-Ad-xl.jpg");
+
+    .slider-text {
+      animation-delay: 9s;
+    }
+  }
+}
+
+@keyframes text-up {
+  10% {
+    transform: translateY(0px);
+  }
+
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+@keyframes zoom-out {
+  100% {
+    width: 100%;
+  }
+}
+
+@keyframes slider-one {
+  0% {
+    visibility: visible;
+  }
+
+  25% {
+    visibility: hidden;
+  }
+
+  50% {
+    visibility: hidden;
+  }
+
+  75% {
+    visibility: hidden;
+  }
+
+  100% {
+    visibility: visible;
+  }
+}
+
+@keyframes slider-two {
+  0% {
+    visibility: hidden;
+  }
+
+  25% {
+    visibility: hidden;
+  }
+
+  50% {
+    visibility: visible;
+  }
+
+  75% {
+    visibility: hidden;
+  }
+
+  100% {
+    visibility: hidden;
+  }
+}
+
+@keyframes slider-three {
+  0% {
+    visibility: hidden;
+  }
+
+  25% {
+    visibility: hidden;
+  }
+
+  50% {
+    visibility: hidden;
+  }
+
+  75% {
+    visibility: visible;
+  }
+
+  100% {
+    visibility: hidden;
+  }
+}
+
+@keyframes slider-four {
+  0% {
+    visibility: hidden;
+  }
+
+  25% {
+    visibility: hidden;
+  }
+
+  50% {
+    visibility: hidden;
+  }
+
+  75% {
+    visibility: hidden;
+  }
+
+  100% {
+    visibility: visible;
+  }
+}
+
+.primary {
+  background-color: red;
+  padding: 10px;
+  margin: 30px
+}
+.primary1 {
+  background-color: blue;
+  padding: 10px;
+  margin: 30px
+}
+.primary2 {
+  background-color: yellow;
+  padding: 10px;
+  margin: 30px
+}
+.primary3 {
+  background-color: green;
+  padding: 10px;
+  margin: 30px
+}
+.primary4 {
+  background-color: pink;
+  padding: 10px;
+  margin: 30px
+}

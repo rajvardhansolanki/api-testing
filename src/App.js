@@ -1,24 +1,29 @@
-import logo from './logo.svg';
 import './App.css';
+import './Scss/main.css';
+import axios from "axios";
+import Navbar from './Component/Navbar';
+import Product from './Pages/Product';
+import Home from './Pages/Home';
+import { BrowserRouter as Router, Switch, Route, Redirect } from 'react-router-dom';
+import Product_details from './Pages/Product_details';
+import post from './Pages/post';
+
+axios.defaults.baseURL='https://fakestoreapi.com'
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+    <Router>
+        <Navbar />
+        <Switch>
+         <Route exact path="/Home" component={Home} />
+         <Route exact path="/Post" component={post} />
+          <Route exact path="/Product" component={Product} />
+          <Route exact path="/Product_details" component={Product_details} />
+          <Redirect to="/Product" />
+        </Switch>
+      </Router>
+    </>
   );
 }
 
